@@ -1,0 +1,515 @@
+<?php
+
+class DispositivoPapForm extends TPage
+{
+    protected $form;
+    private $formFields = [];
+    private static $database = 'nr12';
+    private static $activeRecord = 'DispositivoPap';
+    private static $primaryKey = 'id';
+    private static $formName = 'form_DispositivoPap';
+
+    use Adianti\Base\AdiantiMasterDetailTrait;
+    use Adianti\Base\AdiantiFileSaveTrait;
+
+    /**
+     * Form constructor
+     * @param $param Request
+     */
+    public function __construct( $param )
+    {
+        parent::__construct();
+
+        // creates the form
+        $this->form = new BootstrapFormBuilder(self::$formName);
+        // define the form title
+        $this->form->setFormTitle('Cadastro de dispositivo pap');
+
+
+        $id = new TEntry('id');
+        $apreciacao_id = new TDBCombo('apreciacao_id', 'nr12', 'Apreciacao', 'id', '{id}-  {equipamento->nome} - {equipamento->tag} - {equipamento->patrimonio} ','id asc'  );
+        $vista_dispositivo_pap = new TFile('vista_dispositivo_pap');
+        $tipo_dispositivo = new TCombo('tipo_dispositivo');
+        $instalado = new TRadioGroup('instalado');
+        $instalado_nr12 = new TRadioGroup('instalado_nr12');
+        $zona_segura = new TRadioGroup('zona_segura');
+        $zona_segura_nr12 = new TRadioGroup('zona_segura_nr12');
+        $acionamento_acidental = new TRadioGroup('acionamento_acidental');
+        $acionamento_acidental_nr12 = new TRadioGroup('acionamento_acidental_nr12');
+        $identificado_ptbr = new TRadioGroup('identificado_ptbr');
+        $identificado_ptbr_nr12 = new TRadioGroup('identificado_ptbr_nr12');
+        $acionado_ebt = new TRadioGroup('acionado_ebt');
+        $acionado_ebt_nr12 = new TRadioGroup('acionado_ebt_nr12');
+        $pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id = new TDBCombo('pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id', 'nr12', 'TituloParecerTecnico', 'id', '{titulo_parecer_tecnico}','titulo_parecer_tecnico asc'  );
+        $pap_parecer_tecnico_dispositivo_pap_item_norma_id = new TCombo('pap_parecer_tecnico_dispositivo_pap_item_norma_id');
+        $parecer_extra_norma = new TEntry('parecer_extra_norma');
+        $pap_parecer_tecnico_dispositivo_pap_id = new THidden('pap_parecer_tecnico_dispositivo_pap_id');
+
+        $pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id->setChangeAction(new TAction([$this,'onChangepap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id']));
+
+        $apreciacao_id->addValidation('Apreciação', new TRequiredValidator()); 
+        $tipo_dispositivo->addValidation('Tipo dispositivo', new TRequiredValidator()); 
+        $instalado->addValidation('Instalado', new TRequiredValidator()); 
+        $instalado_nr12->addValidation('Instalado NR12', new TRequiredValidator()); 
+        $zona_segura->addValidation('Localizado em zona segura?', new TRequiredValidator()); 
+        $zona_segura_nr12->addValidation('Zona segura nr12', new TRequiredValidator()); 
+        $acionamento_acidental->addValidation('Passível de acionamento acidental?', new TRequiredValidator()); 
+        $acionamento_acidental_nr12->addValidation('Acionamento acidental nr12', new TRequiredValidator()); 
+        $identificado_ptbr->addValidation('Identificao em Língua Portuguesa?', new TRequiredValidator()); 
+        $identificado_ptbr_nr12->addValidation('Identificado ptbr nr12', new TRequiredValidator()); 
+        $acionado_ebt->addValidation('Acionado em EBT ou dupla isolação?', new TRequiredValidator()); 
+        $acionado_ebt_nr12->addValidation('Acionado ebt nr12', new TRequiredValidator()); 
+
+        $id->setEditable(false);
+        $vista_dispositivo_pap->enableFileHandling();
+        $pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id->setValue('4');
+        $instalado->setLayout('horizontal');
+        $zona_segura->setLayout('horizontal');
+        $acionado_ebt->setLayout('horizontal');
+        $instalado_nr12->setLayout('horizontal');
+        $zona_segura_nr12->setLayout('horizontal');
+        $identificado_ptbr->setLayout('horizontal');
+        $acionado_ebt_nr12->setLayout('horizontal');
+        $acionamento_acidental->setLayout('horizontal');
+        $identificado_ptbr_nr12->setLayout('horizontal');
+        $acionamento_acidental_nr12->setLayout('horizontal');
+
+        $instalado->setUseButton();
+        $zona_segura->setUseButton();
+        $acionado_ebt->setUseButton();
+        $instalado_nr12->setUseButton();
+        $zona_segura_nr12->setUseButton();
+        $identificado_ptbr->setUseButton();
+        $acionado_ebt_nr12->setUseButton();
+        $acionamento_acidental->setUseButton();
+        $identificado_ptbr_nr12->setUseButton();
+        $acionamento_acidental_nr12->setUseButton();
+
+        $instalado->addItems(['Sim'=>'Sim','Não'=>'Não']);
+        $zona_segura->addItems(['Sim'=>'Sim','Não'=>'Não']);
+        $acionado_ebt->addItems(['Sim'=>'Sim','Não'=>'Não']);
+        $instalado_nr12->addItems(['Sim'=>'Sim','Não'=>'Não']);
+        $zona_segura_nr12->addItems(['Sim'=>'Sim','Não'=>'Não']);
+        $identificado_ptbr->addItems(['Sim'=>'Sim','Não'=>'Não']);
+        $acionado_ebt_nr12->addItems(['Sim'=>'Sim','Não'=>'Não']);
+        $acionamento_acidental->addItems(['Sim'=>'Sim','Não'=>'Não']);
+        $identificado_ptbr_nr12->addItems(['Sim'=>'Sim','Não'=>'Não']);
+        $acionamento_acidental_nr12->addItems(['Sim'=>'Sim','Não'=>'Não']);
+        $tipo_dispositivo->addItems(['Partida'=>'Partida','Parada'=>'Parada','Rearme'=>'Rearme']);
+
+        $id->setSize(100);
+        $instalado->setSize(80);
+        $zona_segura->setSize(80);
+        $acionado_ebt->setSize(80);
+        $instalado_nr12->setSize(80);
+        $zona_segura_nr12->setSize(80);
+        $apreciacao_id->setSize('72%');
+        $identificado_ptbr->setSize(80);
+        $acionado_ebt_nr12->setSize(80);
+        $tipo_dispositivo->setSize('70%');
+        $acionamento_acidental->setSize(80);
+        $identificado_ptbr_nr12->setSize(80);
+        $parecer_extra_norma->setSize('70%');
+        $vista_dispositivo_pap->setSize('70%');
+        $acionamento_acidental_nr12->setSize(80);
+        $pap_parecer_tecnico_dispositivo_pap_item_norma_id->setSize('70%');
+        $pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id->setSize('70%');
+
+
+
+
+
+        $row1 = $this->form->addFields([new TLabel('Id:', null, '14px', null)],[$id],[new TLabel('Apreciação:', '#ff0000', '14px', null)],[$apreciacao_id]);
+        $row2 = $this->form->addFields([new TLabel('Vista dispositivo:', '#ff0000', '14px', null)],[$vista_dispositivo_pap],[new TLabel('Tipo dispositivo:', '#ff0000', '14px', null)],[$tipo_dispositivo]);
+        $row3 = $this->form->addFields([new TLabel('Instalado?', '#ff0000', '14px', null)],[$instalado],[new TLabel('Atende NR12?', '#ff0000', '14px', null)],[$instalado_nr12]);
+        $row4 = $this->form->addFields([new TLabel('Localizado em zona segura?', '#ff0000', '14px', null)],[$zona_segura],[new TLabel('Atende NR12?', '#ff0000', '14px', null)],[$zona_segura_nr12]);
+        $row5 = $this->form->addFields([new TLabel('Passível de acionamento acidental?', '#ff0000', '14px', null)],[$acionamento_acidental],[new TLabel('Atende NR12?', '#ff0000', '14px', null)],[$acionamento_acidental_nr12]);
+        $row6 = $this->form->addFields([new TLabel('Identificao em Língua Portuguesa?', '#ff0000', '14px', null)],[$identificado_ptbr],[new TLabel('Atende NR12?', '#ff0000', '14px', null)],[$identificado_ptbr_nr12]);
+        $row7 = $this->form->addFields([new TLabel('Acionado em EBT ou dupla isolação?', '#ff0000', '14px', null)],[$acionado_ebt],[new TLabel('Atende NR12?', '#ff0000', '14px', null)],[$acionado_ebt_nr12]);
+        $row8 = $this->form->addContent([new TFormSeparator('Parecer Técnico', '#333333', '18', '#eeeeee')]);
+        $row9 = $this->form->addFields([new TLabel('Título parecer técnico:', '#ff0000', '14px', null)],[$pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id]);
+        $row10 = $this->form->addFields([new TLabel('Ítem norma:', '#ff0000', '14px', null)],[$pap_parecer_tecnico_dispositivo_pap_item_norma_id]);
+        $row11 = $this->form->addFields([$pap_parecer_tecnico_dispositivo_pap_id]);         
+        $add_pap_parecer_tecnico_dispositivo_pap = new TButton('add_pap_parecer_tecnico_dispositivo_pap');
+
+        $action_pap_parecer_tecnico_dispositivo_pap = new TAction(array($this, 'onAddPapParecerTecnicoDispositivoPap'));
+
+        $add_pap_parecer_tecnico_dispositivo_pap->setAction($action_pap_parecer_tecnico_dispositivo_pap, 'Adicionar');
+        $add_pap_parecer_tecnico_dispositivo_pap->setImage('fa:plus #000000');
+
+        $this->form->addFields([$add_pap_parecer_tecnico_dispositivo_pap]);
+
+        $this->pap_parecer_tecnico_dispositivo_pap_list = new BootstrapDatagridWrapper(new TQuickGrid);
+        $this->pap_parecer_tecnico_dispositivo_pap_list->style = 'width:100%';
+        $this->pap_parecer_tecnico_dispositivo_pap_list->class .= ' table-bordered';
+        $this->pap_parecer_tecnico_dispositivo_pap_list->disableDefaultClick();
+        $this->pap_parecer_tecnico_dispositivo_pap_list->addQuickColumn('', 'edit', 'left', 50);
+        $this->pap_parecer_tecnico_dispositivo_pap_list->addQuickColumn('', 'delete', 'left', 50);
+
+        $column_pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id = $this->pap_parecer_tecnico_dispositivo_pap_list->addQuickColumn('Titulo parecer técnico', 'pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id', 'left');
+        $column_pap_parecer_tecnico_dispositivo_pap_item_norma_id = $this->pap_parecer_tecnico_dispositivo_pap_list->addQuickColumn('Item norma', 'pap_parecer_tecnico_dispositivo_pap_item_norma_id', 'left');
+
+        $this->pap_parecer_tecnico_dispositivo_pap_list->createModel();
+        $this->form->addContent([$this->pap_parecer_tecnico_dispositivo_pap_list]);
+        $row12 = $this->form->addFields([new TLabel('Parecer Técnico Adicional:', null, '14px', null)],[$parecer_extra_norma]);
+
+        // create the form actions
+        $btn_onsave = $this->form->addAction('Salvar', new TAction([$this, 'onSave']), 'fa:floppy-o #ffffff');
+        $btn_onsave->addStyleClass('btn-primary'); 
+
+        $btn_onclear = $this->form->addAction('Limpar formulário', new TAction([$this, 'onClear']), 'fa:eraser #dd5a43');
+
+        // vertical box container
+        $container = new TVBox;
+        $container->style = 'width: 100%';
+        $container->class = 'form-container';
+        $container->add(TBreadCrumb::create(['Lançamentos','Cadastro de dispositivo pap']));
+        $container->add($this->form);
+
+        parent::add($container);
+
+    }
+
+    public static function onChangepap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id($param)
+    {
+        try
+        {
+
+            if (isset($param['pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id']) && $param['pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id'])
+            { 
+                $criteria = TCriteria::create(['titulo_id' => (int) $param['pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id']]);
+                TDBCombo::reloadFromModel(self::$formName, 'pap_parecer_tecnico_dispositivo_pap_item_norma_id', 'nr12', 'ItemNorma', 'id', '{codigo_item_norma} - {descricao_item_norma} ', 'descricao_item_norma asc', $criteria, TRUE); 
+            } 
+            else 
+            { 
+                TCombo::clearField(self::$formName, 'pap_parecer_tecnico_dispositivo_pap_item_norma_id'); 
+            }  
+
+        }
+        catch (Exception $e)
+        {
+            new TMessage('error', $e->getMessage());
+        }
+    } 
+
+    public function onSave($param = null) 
+    {
+        try
+        {
+            TTransaction::open(self::$database); // open a transaction
+
+            /**
+            // Enable Debug logger for SQL operations inside the transaction
+            TTransaction::setLogger(new TLoggerSTD); // standard output
+            TTransaction::setLogger(new TLoggerTXT('log.txt')); // file
+            **/
+
+            $messageAction = null;
+
+            $this->form->validate(); // validate form data
+
+            $object = new DispositivoPap(); // create an empty object 
+
+            $data = $this->form->getData(); // get form data as array
+            $object->fromArray( (array) $data); // load the object with data
+
+            $vista_dispositivo_pap_dir = '../documents';  
+
+            $object->store(); // save the object 
+
+            $this->fireEvents($object);
+
+            $this->saveFile($object, $data, 'vista_dispositivo_pap', $vista_dispositivo_pap_dir); 
+
+            $pap_parecer_tecnico_dispositivo_pap_items = $this->storeItems('PapParecerTecnico', 'dispositivo_pap_id', $object, 'pap_parecer_tecnico_dispositivo_pap', function($masterObject, $detailObject){ 
+
+                //code here
+
+            }); 
+
+            // get the generated {PRIMARY_KEY}
+            $data->id = $object->id; 
+
+            $this->form->setData($data); // fill form data
+            TTransaction::close(); // close the transaction
+
+            /**
+            // To define an action to be executed on the message close event:
+            $messageAction = new TAction(['className', 'methodName']);
+            **/
+
+            new TMessage('info', AdiantiCoreTranslator::translate('Record saved'), $messageAction);
+
+        }
+        catch (Exception $e) // in case of exception
+        {
+            //</catchAutoCode>  
+
+            new TMessage('error', $e->getMessage()); // shows the exception error message
+            $this->form->setData( $this->form->getData() ); // keep form data
+            TTransaction::rollback(); // undo all pending operations
+        }
+    }
+
+    public function onEdit( $param )
+    {
+        try
+        {
+            if (isset($param['key']))
+            {
+                $key = $param['key'];  // get the parameter $key
+                TTransaction::open(self::$database); // open a transaction
+
+                $object = new DispositivoPap($key); // instantiates the Active Record 
+
+                $pap_parecer_tecnico_dispositivo_pap_items = $this->loadItems('PapParecerTecnico', 'dispositivo_pap_id', $object, 'pap_parecer_tecnico_dispositivo_pap', function($masterObject, $detailObject, $objectItems){ 
+
+                    //code here
+
+                    $objectItems->pap_parecer_tecnico_dispositivo_pap_item_norma_id = null;
+                    if(isset($detailObject->item_norma_id) && $detailObject->item_norma_id)
+                    {
+                        $objectItems->pap_parecer_tecnico_dispositivo_pap_item_norma_id = $detailObject->item_norma_id;
+                    }
+                    $objectItems->pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id = null;
+                    if(isset($detailObject->titulo_parecer_tecnico->id) && $detailObject->titulo_parecer_tecnico->id)
+                    {
+                        $objectItems->pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id = $detailObject->titulo_parecer_tecnico->id;
+                    }
+
+                }); 
+
+                $this->form->setData($object); // fill the form 
+
+                $this->fireEvents($object);
+                $this->onReload();
+
+                TTransaction::close(); // close the transaction 
+            }
+            else
+            {
+                $this->form->clear();
+            }
+        }
+        catch (Exception $e) // in case of exception
+        {
+            new TMessage('error', $e->getMessage()); // shows the exception error message
+            TTransaction::rollback(); // undo all pending operations
+        }
+    }
+
+    /**
+     * Clear form data
+     * @param $param Request
+     */
+    public function onClear( $param )
+    {
+        $this->form->clear(true);
+
+        TSession::setValue('pap_parecer_tecnico_dispositivo_pap_items', null);
+
+        $this->onReload();
+    }
+
+    public function onAddPapParecerTecnicoDispositivoPap( $param )
+    {
+        try
+        {
+            $data = $this->form->getData();
+
+            if(!$data->pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id)
+            {
+                throw new Exception(AdiantiCoreTranslator::translate('The field ^1 is required', 'Título parecer técnico'));
+            }             
+
+            $pap_parecer_tecnico_dispositivo_pap_items = TSession::getValue('pap_parecer_tecnico_dispositivo_pap_items');
+            $key = isset($data->pap_parecer_tecnico_dispositivo_pap_id) && $data->pap_parecer_tecnico_dispositivo_pap_id ? $data->pap_parecer_tecnico_dispositivo_pap_id : uniqid();
+            $fields = []; 
+
+            $fields['pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id'] = $data->pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id;
+            $fields['pap_parecer_tecnico_dispositivo_pap_item_norma_id'] = $data->pap_parecer_tecnico_dispositivo_pap_item_norma_id;
+            $pap_parecer_tecnico_dispositivo_pap_items[ $key ] = $fields;
+
+            TSession::setValue('pap_parecer_tecnico_dispositivo_pap_items', $pap_parecer_tecnico_dispositivo_pap_items);
+
+            $data->pap_parecer_tecnico_dispositivo_pap_id = '';
+            $data->pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id = '';
+            $data->pap_parecer_tecnico_dispositivo_pap_item_norma_id = '';
+
+            $this->form->setData($data);
+            $this->fireEvents($data);
+            $this->onReload( $param );
+        }
+        catch (Exception $e)
+        {
+            $this->form->setData( $this->form->getData());
+            $this->fireEvents($data);
+            new TMessage('error', $e->getMessage());
+        }
+    }
+
+    public function onEditPapParecerTecnicoDispositivoPap( $param )
+    {
+        $data = $this->form->getData();
+
+        // read session items
+        $items = TSession::getValue('pap_parecer_tecnico_dispositivo_pap_items');
+
+        // get the session item
+        $item = $items[$param['pap_parecer_tecnico_dispositivo_pap_id_row_id']];
+
+        $data->pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id = $item['pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id'];
+        $data->pap_parecer_tecnico_dispositivo_pap_item_norma_id = $item['pap_parecer_tecnico_dispositivo_pap_item_norma_id'];
+
+        $data->pap_parecer_tecnico_dispositivo_pap_id = $param['pap_parecer_tecnico_dispositivo_pap_id_row_id'];
+
+        // fill product fields
+        $this->form->setData( $data );
+
+        $this->fireEvents($data);
+
+        $this->onReload( $param );
+    }
+
+    public function onDeletePapParecerTecnicoDispositivoPap( $param )
+    {
+        $data = $this->form->getData();
+
+        $data->pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id = '';
+        $data->pap_parecer_tecnico_dispositivo_pap_item_norma_id = '';
+
+        // clear form data
+        $this->form->setData( $data );
+
+        // read session items
+        $items = TSession::getValue('pap_parecer_tecnico_dispositivo_pap_items');
+
+        // delete the item from session
+        unset($items[$param['pap_parecer_tecnico_dispositivo_pap_id_row_id']]);
+        TSession::setValue('pap_parecer_tecnico_dispositivo_pap_items', $items);
+
+        $this->fireEvents($data);
+
+        // reload sale items
+        $this->onReload( $param );
+    }
+
+    public function onReloadPapParecerTecnicoDispositivoPap( $param )
+    {
+        $items = TSession::getValue('pap_parecer_tecnico_dispositivo_pap_items'); 
+
+        $this->pap_parecer_tecnico_dispositivo_pap_list->clear(); 
+
+        if($items) 
+        { 
+            $cont = 1; 
+            foreach ($items as $key => $item) 
+            {
+                $rowItem = new StdClass;
+
+                $action_del = new TAction(array($this, 'onDeletePapParecerTecnicoDispositivoPap')); 
+                $action_del->setParameter('pap_parecer_tecnico_dispositivo_pap_id_row_id', $key);   
+
+                $action_edi = new TAction(array($this, 'onEditPapParecerTecnicoDispositivoPap'));  
+                $action_edi->setParameter('pap_parecer_tecnico_dispositivo_pap_id_row_id', $key);  
+
+                $button_del = new TButton('delete_pap_parecer_tecnico_dispositivo_pap'.$cont);
+                $button_del->class = 'btn btn-default btn-sm';
+                $button_del->setAction($action_del, '');
+                $button_del->setImage('fa:trash-o'); 
+                $button_del->setFormName($this->form->getName());
+
+                $button_edi = new TButton('edit_pap_parecer_tecnico_dispositivo_pap'.$cont);
+                $button_edi->class = 'btn btn-default btn-sm';
+                $button_edi->setAction($action_edi, '');
+                $button_edi->setImage('bs:edit');
+                $button_edi->setFormName($this->form->getName());
+
+                $rowItem->edit = $button_edi;
+                $rowItem->delete = $button_del;
+
+                $rowItem->pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id = '';
+                if(isset($item['pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id']) && $item['pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id'])
+                {
+                    TTransaction::open('nr12');
+                    $titulo_parecer_tecnico = TituloParecerTecnico::find($item['pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id']);
+                    if($titulo_parecer_tecnico)
+                    {
+                        $rowItem->pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id = $titulo_parecer_tecnico->render('{titulo_parecer_tecnico}');
+                    }
+                    TTransaction::close();
+                }
+
+                $rowItem->pap_parecer_tecnico_dispositivo_pap_item_norma_id = '';
+                if(isset($item['pap_parecer_tecnico_dispositivo_pap_item_norma_id']) && $item['pap_parecer_tecnico_dispositivo_pap_item_norma_id'])
+                {
+                    TTransaction::open('nr12');
+                    $item_norma = ItemNorma::find($item['pap_parecer_tecnico_dispositivo_pap_item_norma_id']);
+                    if($item_norma)
+                    {
+                        $rowItem->pap_parecer_tecnico_dispositivo_pap_item_norma_id = $item_norma->render('{codigo_item_norma} - {descricao_item_norma} ');
+                    }
+                    TTransaction::close();
+                }
+
+                $row = $this->pap_parecer_tecnico_dispositivo_pap_list->addItem($rowItem);
+
+                $cont++;
+            } 
+        } 
+    } 
+
+    public function onShow($param = null)
+    {
+        TSession::setValue('pap_parecer_tecnico_dispositivo_pap_items', null);
+
+        $this->onReload();
+
+    } 
+
+    public function fireEvents( $object )
+    {
+        $obj = new stdClass;
+        if(is_object($object) && get_class($object) == 'stdClass')
+        {
+            if(isset($object->pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id))
+            {
+                $obj->pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id = $object->pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id;
+            }
+            if(isset($object->pap_parecer_tecnico_dispositivo_pap_item_norma_id))
+            {
+                $obj->pap_parecer_tecnico_dispositivo_pap_item_norma_id = $object->pap_parecer_tecnico_dispositivo_pap_item_norma_id;
+            }
+        }
+        elseif(is_object($object))
+        {
+            if(isset($object->pap_parecer_tecnico->dispositivo_pap->titulo_parecer_tecnico->id))
+            {
+                $obj->pap_parecer_tecnico_dispositivo_pap_titulo_parecer_tecnico_id = $object->pap_parecer_tecnico->dispositivo_pap->titulo_parecer_tecnico->id;
+            }
+            if(isset($object->pap_parecer_tecnico->dispositivo_pap->item_norma_id))
+            {
+                $obj->pap_parecer_tecnico_dispositivo_pap_item_norma_id = $object->pap_parecer_tecnico->dispositivo_pap->item_norma_id;
+            }
+        }
+        TForm::sendData(self::$formName, $obj);
+    }  
+
+    public function onReload($params = null)
+    {
+        $this->loaded = TRUE;
+
+        $this->onReloadPapParecerTecnicoDispositivoPap($params);
+    }
+
+    public function show() 
+    { 
+        if (!$this->loaded AND (!isset($_GET['method']) OR $_GET['method'] !== 'onReload') ) 
+        { 
+            $this->onReload( func_get_arg(0) );
+        }
+        parent::show();
+    }
+
+}
+

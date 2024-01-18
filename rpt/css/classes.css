@@ -1,0 +1,104 @@
+/* CSS Document */
+/* 
+Verde normatiza: #00A887
+Roxo normatiza: #4D008C
+*/
+/* Campos ReadOnly */
+body{
+	letter-spacing: 0.1px;
+	word-spacing: normal;
+}
+.table_head
+	{
+	font-family: Arial, Helvetica, sans-serif;
+	text-align:left;
+	font-size: 14px;
+	color: #FFFFFF;
+	background-color: #4D008C;
+	/*width:100%;
+	border:solid 1px #4D008C;*/
+	}
+.table_n
+	{
+	/*background-color: #4D008C;*/
+	width:750px;
+   border-top:1pt solid black; 
+   border-bottom:1pt solid black;
+   border-right:1pt solid black; 
+   border-left:1pt solid black; 
+	}
+
+
+tr.border_bottom td {
+   border-top:1pt solid black; 
+   border-bottom:1pt solid black;
+   border-right:1pt solid black; 
+   border-left:1pt solid black; 
+
+}
+/********** APRECIAÇÃO DE RISCOS *************** */
+.laudo_title{
+	font-family: "arial","verdana";
+	font-size: 18px;
+	color: #4D008C	;
+}
+.laudo_head{
+	font-family: "arial","verdana";
+	font-size: 14px;
+	color: #ffffff;
+}
+.laudo{
+	font-family: "arial","verdana";
+	font-size: 10px;
+	color: #4D008C;
+}
+
+
+/********** RELATÓRIOS MIX RF - 41 *************** */
+.rf_title{
+	font-family: "arial","verdana";
+	font-size: 20px;
+	color: #000000;
+}
+.rf_head{
+	font-family: "arial","verdana";
+	font-size: 18px;
+	color: #000000;
+}
+.rf{
+	font-family: "arial","verdana";
+	font-size: 16px;
+	color: #000000;
+}
+div.error { display: none; }
+input {	border: 1px solid black; }
+input.checkbox { border: none }
+input:focus { border: 1px solid green; }
+input.error { border: 1px solid red; }
+
+/******************* ToolType ***************** */
+#tt {
+font-size: 11px;
+font-family: Verdana, Arial, sans-serif;
+position:absolute;
+display:block;
+}
+#tttop {
+display:block;
+height:5px;
+margin-left:5px;
+overflow:hidden;
+}
+#ttcont {
+display:block;
+padding:2px 7px 3px 7px;
+margin-left:5px;
+background:#1F164C;
+color:#FFF;
+}
+#ttbot {
+display:block;
+height:5px;
+margin-left:5px;
+overflow:hidden;
+}

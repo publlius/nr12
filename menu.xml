@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+  <menuitem label="Cadastros">
+    <icon>fa:pencil fa-fw </icon>
+    <menu>
+      <menuitem label="Países">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>PaisList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Estados">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>EstadoList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Unidades (filiais)">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>EmpresaUnidadeList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Empresas">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>EmpresaList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Cidades">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>CidadeList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Título (Item Norma)">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>TituloParecerTecnicoList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Item Norma">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>ItemNormaList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Status Item">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>StatusItemList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Tipo Sistema de Segurança">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>SistemaSegurancaTipoList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Sistema de Segurança">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>SistemaSegurancaList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Tipo Perigo">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>TipoPerigoList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Perigo">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>PerigoList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Classificação Risco">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>ClassificacaoRiscoList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Risco">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>RiscoList#method=onShow</action>
+      </menuitem>
+      <menuitem label="HRN PMP">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>HrnPmpList#method=onShow</action>
+      </menuitem>
+      <menuitem label="HRN PE">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>HrnPeList#method=onShow</action>
+      </menuitem>
+      <menuitem label="HRN NP">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>HrnNpList#method=onShow</action>
+      </menuitem>
+      <menuitem label="HRN FE">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>HrnFeList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Tipo Sistema Seguranca">
+        <icon>fa:circle-o fa:fw</icon>
+        <action>TipoSistemaSegurancaList</action>
+      </menuitem>
+    </menu>
+  </menuitem>
+  <menuitem label="Lançamentos">
+    <icon>fa:pencil-square-o fa-fw </icon>
+    <menu>
+      <menuitem label="Equipamentos">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>EquipamentoList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Apreciacoes">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>ApreciacaoList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Ponto perigos">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>PontoPerigoList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Ponto riscos">
+        <icon>fa:circle-o fa-fw </icon>
+        <action>PontoRiscoList#method=onShow</action>
+      </menuitem>
+      <menuitem label="Pontos">
+        <icon>fa:circle-o fa:fw</icon>
+        <action>PontoList</action>
+      </menuitem>
+      <menuitem label="Dispositivo de PE">
+        <icon>fa:circle-o fa:fw</icon>
+        <action>DispositivoPeList</action>
+      </menuitem>
+      <menuitem label="Disposicoes Finais">
+        <icon>fa:circle-o fa:fw</icon>
+        <action>DisposicoesFinaisList</action>
+      </menuitem>
+      <menuitem label="Dispositivo de PAP">
+        <icon>fa:circle-o fa:fw</icon>
+        <action>DispositivoPapList</action>
+      </menuitem>
+      <menuitem label="Ponto Report">
+        <icon>fa:circle-o fa:fw</icon>
+        <action>PontoReport</action>
+      </menuitem>
+      <menuitem label="Ponto Document">
+        <icon>fa:circle-o fa:fw</icon>
+        <action>PontoDocument</action>
+      </menuitem>
+      <menuitem label="Equipamentos">
+        <icon>fa:circle-o fa:fw</icon>
+        <action>EquipamentoReport</action>
+      </menuitem>
+    </menu>
+  </menuitem>
+  <menuitem label="CRM">
+    <icon>fa:phone-square fa:fw</icon>
+    <menu>
+      <menuitem label="Prospecção de Cliente">
+        <icon>fa:phone fa:fw</icon>
+        <action>ProspeccaoCalendarFormView</action>
+      </menuitem>
+      <menuitem label="Listagem de Prospecções">
+        <icon>fa:mobile-phone fa:fw</icon>
+        <action>ProspeccaoList</action>
+      </menuitem>
+    </menu>
+  </menuitem>
+  <menuitem label="_t{Administration}">
+    <icon>fa:university fa-fw</icon>
+    <menu>
+      <menuitem label="_t{Programs}">
+        <icon>fa:file-code-o fa-fw</icon>
+        <action>SystemProgramList</action>
+      </menuitem>
+      <menuitem label="_t{Groups}">
+        <icon>fa:users fa-fw</icon>
+        <action>SystemGroupList</action>
+      </menuitem>
+      <menuitem label="_t{Units}">
+        <icon>fa:university fa-fw</icon>
+        <action>SystemUnitList</action>
+      </menuitem>
+      <menuitem label="_t{Users}">
+        <icon>fa:user fa-fw</icon>
+        <action>SystemUserList</action>
+      </menuitem>
+      <menuitem label="_t{Database explorer}">
+        <icon>fa:database fa-fw</icon>
+        <action>SystemDatabaseExplorer</action>
+      </menuitem>
+      <menuitem label="_t{SQL Panel}">
+        <icon>fa:table fa-fw</icon>
+        <action>SystemSQLPanel</action>
+      </menuitem>
+      <menuitem label="PHP Info">
+        <icon>fa:info-circle fa-fw</icon>
+        <action>SystemPHPInfoView</action>
+      </menuitem>
+      <menuitem label="PHP Modules">
+        <icon>fa:info-circle fa-fw</icon>
+        <action>SystemModulesCheckView</action>
+      </menuitem>
+      <menuitem label="_t{Preferences}">
+        <icon>fa:cog fa-fw</icon>
+        <action>SystemPreferenceForm#method=onEdit</action>
+      </menuitem>
+    </menu>
+  </menuitem>
+  <menuitem label="_t{Documents}">
+    <icon>fa:file-text-o fa-fw</icon>
+    <menu>
+      <menuitem label="_t{Send document}">
+        <icon>fa:cloud-upload fa-fw</icon>
+        <action>SystemDocumentUploadForm</action>
+      </menuitem>
+      <menuitem label="_t{My documents}">
+        <icon>fa:archive fa-fw</icon>
+        <action>SystemDocumentList</action>
+      </menuitem>
+      <menuitem label="_t{Shared with me}">
+        <icon>fa:share-alt fa-fw</icon>
+        <action>SystemSharedDocumentList</action>
+      </menuitem>
+      <menuitem label="_t{Categories}">
+        <icon>fa:th fa-fw</icon>
+        <action>SystemDocumentCategoryFormList</action>
+      </menuitem>
+    </menu>
+  </menuitem>
+  <menuitem label="Logs">
+    <icon>fa:desktop fa-fw</icon>
+    <menu>
+      <menuitem label="_t{Access Stats}">
+        <icon>fa:bar-chart fa-fw</icon>
+        <action>SystemAccessLogStats</action>
+      </menuitem>
+      <menuitem label="_t{Access Log}">
+        <icon>fa:key fa-fw</icon>
+        <action>SystemAccessLogList</action>
+      </menuitem>
+      <menuitem label="_t{Change Log}">
+        <icon>fa:film fa-fw</icon>
+        <action>SystemChangeLogView</action>
+      </menuitem>
+      <menuitem label="_t{SQL Log}">
+        <icon>fa:database fa-fw</icon>
+        <action>SystemSqlLogList</action>
+      </menuitem>
+      <menuitem label="_t{PHP Log}">
+        <icon>fa:exclamation-triangle fa-fw</icon>
+        <action>SystemPHPErrorLogView</action>
+      </menuitem>
+    </menu>
+  </menuitem>
+  <menuitem label="Logout">
+    <icon>fa:sign-out fa-fw</icon>
+    <menu>
+      <menuitem label="Logout">
+        <action>LoginForm#method=onLogout#static=1</action>
+        <icon>fa:sign-out fa-fw</icon>
+      </menuitem>
+    </menu>
+  </menuitem>
+</menu>

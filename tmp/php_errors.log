@@ -1,0 +1,73 @@
+[12-Dec-2018 11:48:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/normatiza/public_html/n12/app/control/lancamentos/PontoForm.php on line 1179
+[12-Dec-2018 11:48:09 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/normatiza/public_html/n12/app/control/lancamentos/PontoForm.php on line 1179
+[12-Dec-2018 14:50:58 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'ReflectionException' with message 'Method LoginForm::() does not exist' in /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php:46
+Stack trace:
+#0 /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php(46): ReflectionMethod->__construct('LoginForm', '')
+#1 /home/normatiza/public_html/n12/engine.php(32): Adianti\Core\AdiantiCoreApplication::run(true)
+#2 /home/normatiza/public_html/n12/engine.php(64): TApplication::run(true)
+#3 {main}
+  thrown in /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php on line 46
+[12-Dec-2018 14:51:10 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'ReflectionException' with message 'Method LoginForm::() does not exist' in /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php:46
+Stack trace:
+#0 /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php(46): ReflectionMethod->__construct('LoginForm', '')
+#1 /home/normatiza/public_html/n12/engine.php(32): Adianti\Core\AdiantiCoreApplication::run(true)
+#2 /home/normatiza/public_html/n12/engine.php(64): TApplication::run(true)
+#3 {main}
+  thrown in /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php on line 46
+[19-Dec-2018 12:05:58 America/Sao_Paulo] PHP Warning:  Creating default object from empty value in /home/normatiza/public_html/n12/app/control/lancamentos/EquipamentoList.php on line 89
+[19-Dec-2018 12:05:58 America/Sao_Paulo] PHP Fatal error:  Call to a member function setAction() on null in /home/normatiza/public_html/n12/app/control/lancamentos/EquipamentoList.php on line 91
+[19-Dec-2018 12:06:00 America/Sao_Paulo] PHP Warning:  Creating default object from empty value in /home/normatiza/public_html/n12/app/control/lancamentos/EquipamentoList.php on line 89
+[19-Dec-2018 12:06:00 America/Sao_Paulo] PHP Fatal error:  Call to a member function setAction() on null in /home/normatiza/public_html/n12/app/control/lancamentos/EquipamentoList.php on line 91
+[19-Dec-2018 12:10:12 America/Sao_Paulo] PHP Warning:  mkdir(): Permission denied in /home/normatiza/public_html/n12/lib/adianti/base/AdiantiFileSaveTrait.php on line 70
+[19-Dec-2018 12:10:59 America/Sao_Paulo] PHP Warning:  mkdir(): Permission denied in /home/normatiza/public_html/n12/lib/adianti/base/AdiantiFileSaveTrait.php on line 70
+[02-Jan-2019 09:28:38 America/Sao_Paulo] PHP Fatal error:  Class 'PapParecerTecnico' not found in /home/normatiza/public_html/n12/lib/adianti/base/AdiantiMasterDetailTrait.php on line 44
+[02-Jan-2019 10:02:35 America/Sao_Paulo] PHP Fatal error:  Class 'PapParecerTecnico' not found in /home/normatiza/public_html/n12/lib/adianti/base/AdiantiMasterDetailTrait.php on line 93
+[02-Jan-2019 10:02:42 America/Sao_Paulo] PHP Fatal error:  Class 'PapParecerTecnico' not found in /home/normatiza/public_html/n12/lib/adianti/base/AdiantiMasterDetailTrait.php on line 93
+[02-Jan-2019 10:04:04 America/Sao_Paulo] PHP Fatal error:  Class 'PapParecerTecnico' not found in /home/normatiza/public_html/n12/lib/adianti/base/AdiantiMasterDetailTrait.php on line 93
+[02-Jan-2019 15:41:46 America/Sao_Paulo] PHP Fatal error:  Class 'PapParecerTecnico' not found in /home/normatiza/public_html/n12/lib/adianti/base/AdiantiMasterDetailTrait.php on line 93
+[02-Jan-2019 15:42:24 America/Sao_Paulo] PHP Fatal error:  Class 'PapParecerTecnico' not found in /home/normatiza/public_html/n12/lib/adianti/base/AdiantiMasterDetailTrait.php on line 93
+[02-Jan-2019 15:43:42 America/Sao_Paulo] PHP Fatal error:  Class 'PapParecerTecnico' not found in /home/normatiza/public_html/n12/lib/adianti/base/AdiantiMasterDetailTrait.php on line 44
+[02-Jan-2019 15:44:09 America/Sao_Paulo] PHP Fatal error:  Class 'PapParecerTecnico' not found in /home/normatiza/public_html/n12/lib/adianti/base/AdiantiMasterDetailTrait.php on line 93
+[02-Jan-2019 15:48:42 America/Sao_Paulo] PHP Fatal error:  Class 'PapParecerTecnico' not found in /home/normatiza/public_html/n12/lib/adianti/base/AdiantiMasterDetailTrait.php on line 93
+[02-Jan-2019 18:10:05 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'ReflectionException' with message 'Method LoginForm::() does not exist' in /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php:46
+Stack trace:
+#0 /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php(46): ReflectionMethod->__construct('LoginForm', '')
+#1 /home/normatiza/public_html/n12/engine.php(32): Adianti\Core\AdiantiCoreApplication::run(true)
+#2 /home/normatiza/public_html/n12/engine.php(64): TApplication::run(true)
+#3 {main}
+  thrown in /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php on line 46
+[02-Jan-2019 18:10:12 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'ReflectionException' with message 'Method LoginForm::() does not exist' in /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php:46
+Stack trace:
+#0 /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php(46): ReflectionMethod->__construct('LoginForm', '')
+#1 /home/normatiza/public_html/n12/engine.php(32): Adianti\Core\AdiantiCoreApplication::run(true)
+#2 /home/normatiza/public_html/n12/engine.php(64): TApplication::run(true)
+#3 {main}
+  thrown in /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php on line 46
+[02-Jan-2019 18:10:16 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'ReflectionException' with message 'Method LoginForm::() does not exist' in /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php:46
+Stack trace:
+#0 /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php(46): ReflectionMethod->__construct('LoginForm', '')
+#1 /home/normatiza/public_html/n12/engine.php(32): Adianti\Core\AdiantiCoreApplication::run(true)
+#2 /home/normatiza/public_html/n12/engine.php(64): TApplication::run(true)
+#3 {main}
+  thrown in /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php on line 46
+[04-Jan-2019 17:31:04 America/Sao_Paulo] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/normatiza/public_html/n12/lib/adianti/widget/base/TElement.php on line 309
+[04-Jan-2019 17:31:04 America/Sao_Paulo] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/normatiza/public_html/n12/lib/adianti/widget/base/TElement.php on line 353
+[04-Jan-2019 17:34:03 America/Sao_Paulo] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/normatiza/public_html/n12/lib/adianti/widget/base/TElement.php on line 309
+[04-Jan-2019 17:34:03 America/Sao_Paulo] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/normatiza/public_html/n12/lib/adianti/widget/base/TElement.php on line 353
+[04-Jan-2019 17:34:12 America/Sao_Paulo] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/normatiza/public_html/n12/lib/adianti/widget/base/TElement.php on line 309
+[04-Jan-2019 17:34:12 America/Sao_Paulo] PHP Warning:  in_array() expects parameter 2 to be array, null given in /home/normatiza/public_html/n12/lib/adianti/widget/base/TElement.php on line 353
+[07-Jan-2019 10:43:40 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'ReflectionException' with message 'Method LoginForm::() does not exist' in /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php:46
+Stack trace:
+#0 /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php(46): ReflectionMethod->__construct('LoginForm', '')
+#1 /home/normatiza/public_html/n12/engine.php(32): Adianti\Core\AdiantiCoreApplication::run(true)
+#2 /home/normatiza/public_html/n12/engine.php(64): TApplication::run(true)
+#3 {main}
+  thrown in /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php on line 46
+[07-Jan-2019 16:10:57 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'ReflectionException' with message 'Method LoginForm::() does not exist' in /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php:46
+Stack trace:
+#0 /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php(46): ReflectionMethod->__construct('LoginForm', '')
+#1 /home/normatiza/public_html/n12/engine.php(32): Adianti\Core\AdiantiCoreApplication::run(true)
+#2 /home/normatiza/public_html/n12/engine.php(64): TApplication::run(true)
+#3 {main}
+  thrown in /home/normatiza/public_html/n12/lib/adianti/core/AdiantiCoreApplication.php on line 46
+[08-Feb-2019 10:18:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '}' in /home/normatiza/public_html/n12/app/control/crm/ProspeccaoCalendarForm.php on line 182

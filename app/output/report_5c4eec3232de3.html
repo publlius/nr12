@@ -1,0 +1,423 @@
+<html>
+<style>
+    .title
+    {
+        font-family: Helvetica;
+        color: #000000;
+        background-color: #dbdbdb;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        border-left: 1px solid #000000;
+        border-right: 1px solid #000000;
+        font-size: 10pt;
+        font-weight: bold;
+    }
+    .datap
+    {
+        font-family: Arial;
+        color: #333333;
+        background-color: #f0f0f0;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        border-left: 1px solid #000000;
+        border-right: 1px solid #000000;
+        font-size: 10pt;
+    }
+    .datai
+    {
+        font-family: Arial;
+        color: #333333;
+        background-color: #ffffff;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        border-left: 1px solid #000000;
+        border-right: 1px solid #000000;
+        font-size: 10pt;
+    }
+    .header
+    {
+        font-family: Helvetica;
+        color: #5a5a5a;
+        background-color: #6B6B6B;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        border-left: 1px solid #000000;
+        border-right: 1px solid #000000;
+        font-size: 16pt;
+        font-weight: bold;
+    }
+    .footer
+    {
+        font-family: Helvetica;
+        color: #5a5a5a;
+        background-color: #A3A3A3;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        border-left: 1px solid #000000;
+        border-right: 1px solid #000000;
+        font-size: 10pt;
+        font-weight: bold;
+    }
+    .break
+    {
+        font-family: Helvetica;
+        color: #ffffff;
+        background-color: #9a9a9a;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        border-left: 1px solid #000000;
+        border-right: 1px solid #000000;
+        font-size: 10pt;
+        font-weight: bold;
+    }
+    .total
+    {
+        font-family: Helvetica;
+        color: #000000;
+        background-color: #c7c7c7;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        border-left: 1px solid #000000;
+        border-right: 1px solid #000000;
+        font-size: 10pt;
+        font-style: italic;
+    }
+    .breakTotal
+    {
+        font-family: Helvetica;
+        color: #000000;
+        background-color: #c6c8d0;
+        border-top: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        border-left: 1px solid #000000;
+        border-right: 1px solid #000000;
+        font-size: 10pt;
+        font-style: italic;
+    }
+</style>
+<table cellspacing="0" cellpadding="0" style="border-collapse:collapse">
+<tr>
+<td align="left" width="198" colspan="1" class="title">Id</td>
+<td align="left" width="198" colspan="1" class="title">Unidade</td>
+<td align="left" width="198" colspan="1" class="title">Nome</td>
+<td align="left" width="198" colspan="1" class="title">Tipo</td>
+<td align="left" width="198" colspan="1" class="title">Modelo</td>
+<td align="left" width="198" colspan="1" class="title">Numero serie</td>
+<td align="left" width="198" colspan="1" class="title">Data fabricacao</td>
+<td align="left" width="198" colspan="1" class="title">Peso</td>
+<td align="left" width="198" colspan="1" class="title">Setor</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datai">8</td>
+<td align="left" width="198" colspan="1" class="datai">2</td>
+<td align="left" width="198" colspan="1" class="datai">PENEIRA CILÍNDRICA (2 PÓ, 2 PALITO)</td>
+<td align="left" width="198" colspan="1" class="datai">PENEIRA CILINDRICA</td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai">PRODUTIVO</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="title">Fabricante</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante endereco</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cidade id</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cep</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cnpj</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante registro crea</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="title">Vista frontal</td>
+<td align="left" width="198" colspan="1" class="title">Vista lateral esquerda</td>
+<td align="left" width="198" colspan="1" class="title">Vista lateral direita</td>
+<td align="left" width="198" colspan="1" class="title">Vista posterior</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datai">../documents/8/15471279181761644686131.jpg</td>
+<td align="left" width="198" colspan="1" class="datai">../documents/8/15471279498192123327827.jpg</td>
+<td align="left" width="198" colspan="1" class="datai">../documents/8/1547127990675950209265.jpg</td>
+<td align="left" width="198" colspan="1" class="datai">../documents/8/154712803176123362028.jpg</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datap">13</td>
+<td align="left" width="198" colspan="1" class="datap">2</td>
+<td align="left" width="198" colspan="1" class="datap">PENEIRA CILINDRICA / ENSACAMENTO PÓ</td>
+<td align="left" width="198" colspan="1" class="datap">PENEIRA CILINDRICA</td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap">PRODUTIVO</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="title">Fabricante</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante endereco</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cidade id</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cep</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cnpj</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante registro crea</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="title">Vista frontal</td>
+<td align="left" width="198" colspan="1" class="title">Vista lateral esquerda</td>
+<td align="left" width="198" colspan="1" class="title">Vista lateral direita</td>
+<td align="left" width="198" colspan="1" class="title">Vista posterior</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datap">../documents/13/DSC_2764.JPG</td>
+<td align="left" width="198" colspan="1" class="datap">../documents/13/DSC_2765.JPG</td>
+<td align="left" width="198" colspan="1" class="datap">../documents/13/DSC_2766.JPG</td>
+<td align="left" width="198" colspan="1" class="datap">../documents/13/DSC_2767.JPG</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datai">32</td>
+<td align="left" width="198" colspan="1" class="datai">2</td>
+<td align="left" width="198" colspan="1" class="datai">PENEIRA ELEVADA</td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai">PRODUTIVO</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="title">Fabricante</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante endereco</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cidade id</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cep</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cnpj</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante registro crea</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="title">Vista frontal</td>
+<td align="left" width="198" colspan="1" class="title">Vista lateral esquerda</td>
+<td align="left" width="198" colspan="1" class="title">Vista lateral direita</td>
+<td align="left" width="198" colspan="1" class="title">Vista posterior</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datai">../documents/32/DSC_2975.JPG</td>
+<td align="left" width="198" colspan="1" class="datai">../documents/32/DSC_2976.JPG</td>
+<td align="left" width="198" colspan="1" class="datai">../documents/32/DSC_2977.JPG</td>
+<td align="left" width="198" colspan="1" class="datai">../documents/32/DSC_2978.JPG</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datap">41</td>
+<td align="left" width="198" colspan="1" class="datap">2</td>
+<td align="left" width="198" colspan="1" class="datap">PENEIRA GRANDE (CANCHEADOR)</td>
+<td align="left" width="198" colspan="1" class="datap">PENEIRA CILÍNDRICA</td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap">PRODUTIVO</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="title">Fabricante</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante endereco</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cidade id</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cep</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cnpj</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante registro crea</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="title">Vista frontal</td>
+<td align="left" width="198" colspan="1" class="title">Vista lateral esquerda</td>
+<td align="left" width="198" colspan="1" class="title">Vista lateral direita</td>
+<td align="left" width="198" colspan="1" class="title">Vista posterior</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datap">../documents/41/DSC_2688 (640x427).jpg</td>
+<td align="left" width="198" colspan="1" class="datap">../documents/41/DSC_2689 (640x427).jpg</td>
+<td align="left" width="198" colspan="1" class="datap">../documents/41/DSC_2690 (640x427).jpg</td>
+<td align="left" width="198" colspan="1" class="datap">../documents/41/DSC_2691 (640x427).jpg</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datai">54</td>
+<td align="left" width="198" colspan="1" class="datai">2</td>
+<td align="left" width="198" colspan="1" class="datai">PENEIRA 1, 2, E 3</td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai">PRODUTIVO</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="title">Fabricante</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante endereco</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cidade id</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cep</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cnpj</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante registro crea</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="title">Vista frontal</td>
+<td align="left" width="198" colspan="1" class="title">Vista lateral esquerda</td>
+<td align="left" width="198" colspan="1" class="title">Vista lateral direita</td>
+<td align="left" width="198" colspan="1" class="title">Vista posterior</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datai">../documents/54/DSC_3155.JPG</td>
+<td align="left" width="198" colspan="1" class="datai">../documents/54/DSC_3156.JPG</td>
+<td align="left" width="198" colspan="1" class="datai">../documents/54/DSC_3157.JPG</td>
+<td align="left" width="198" colspan="1" class="datai">../documents/54/DSC_3158.JPG</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datap">56</td>
+<td align="left" width="198" colspan="1" class="datap">2</td>
+<td align="left" width="198" colspan="1" class="datap">ELEVADOR DE CANECAS DA PENEIRA</td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap">PRODUTIVO</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="title">Fabricante</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante endereco</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cidade id</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cep</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cnpj</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante registro crea</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="title">Vista frontal</td>
+<td align="left" width="198" colspan="1" class="title">Vista lateral esquerda</td>
+<td align="left" width="198" colspan="1" class="title">Vista lateral direita</td>
+<td align="left" width="198" colspan="1" class="title">Vista posterior</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datap">../documents/56/DSC_3172.JPG</td>
+<td align="left" width="198" colspan="1" class="datap">../documents/56/DSC_3173.JPG</td>
+<td align="left" width="198" colspan="1" class="datap">../documents/56/DSC_3174.JPG</td>
+<td align="left" width="198" colspan="1" class="datap">../documents/56/DSC_3175.JPG</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datai">59</td>
+<td align="left" width="198" colspan="1" class="datai">2</td>
+<td align="left" width="198" colspan="1" class="datai">PENEIRA GIRATÓRIA EXPOTAÇÃO</td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai">PRODUTIVO</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="title">Fabricante</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante endereco</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cidade id</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cep</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cnpj</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante registro crea</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+<td align="left" width="198" colspan="1" class="datai"></td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="title">Vista frontal</td>
+<td align="left" width="198" colspan="1" class="title">Vista lateral esquerda</td>
+<td align="left" width="198" colspan="1" class="title">Vista lateral direita</td>
+<td align="left" width="198" colspan="1" class="title">Vista posterior</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datai">../documents/59/DSC_3182.JPG</td>
+<td align="left" width="198" colspan="1" class="datai">../documents/59/DSC_3183.JPG</td>
+<td align="left" width="198" colspan="1" class="datai">../documents/59/DSC_3184.JPG</td>
+<td align="left" width="198" colspan="1" class="datai">../documents/59/DSC_3185.JPG</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datap">61</td>
+<td align="left" width="198" colspan="1" class="datap">2</td>
+<td align="left" width="198" colspan="1" class="datap">PENEIRA PEQUENA (CANCHEADOR)</td>
+<td align="left" width="198" colspan="1" class="datap">PENEIRA CILINDRICA</td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="title">Fabricante</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante endereco</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cidade id</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cep</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante cnpj</td>
+<td align="left" width="198" colspan="1" class="title">Fabricante registro crea</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+<td align="left" width="198" colspan="1" class="datap"></td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="title">Vista frontal</td>
+<td align="left" width="198" colspan="1" class="title">Vista lateral esquerda</td>
+<td align="left" width="198" colspan="1" class="title">Vista lateral direita</td>
+<td align="left" width="198" colspan="1" class="title">Vista posterior</td>
+</tr>
+<tr>
+<td align="left" width="198" colspan="1" class="datap">../documents/61/DSC_2704.JPG</td>
+<td align="left" width="198" colspan="1" class="datap">../documents/61/DSC_2705.JPG</td>
+<td align="left" width="198" colspan="1" class="datap">../documents/61/DSC_2706.JPG</td>
+<td align="left" width="198" colspan="1" class="datap">../documents/61/DSC_2707.JPG</td>
+</tr>
+</table>
+</html>
